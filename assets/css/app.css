@@ -1,0 +1,289 @@
+/*==================================================
+LEVEL-UP V3
+APP FOUNDATION
+==================================================*/
+
+/* ==========================
+   RESET
+========================== */
+
+*,
+*::before,
+*::after{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+/* ==========================
+   ROOT APP
+========================== */
+
+html{
+    font-size:16px;
+    scroll-behavior:smooth;
+}
+
+body{
+
+    min-width:320px;
+    min-height:100vh;
+
+    overflow-x:hidden;
+
+    background:
+radial-gradient(circle at top left,
+rgba(108,77,255,.18),
+transparent 35%),
+
+radial-gradient(circle at bottom right,
+rgba(92,170,255,.10),
+transparent 40%),
+
+linear-gradient(
+180deg,
+#090910,
+#11111D,
+#181827
+);
+    color:#FFFFFF;
+
+    font-family:
+        Inter,
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    position:relative;
+
+}
+
+/* ==========================
+   BACKGROUND
+========================== */
+
+body::before{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    background:
+
+        radial-gradient(
+            circle at top,
+            rgba(108,77,255,.18),
+            transparent 45%
+        ),
+
+        radial-gradient(
+            circle at bottom,
+            rgba(67,44,180,.12),
+            transparent 40%
+        );
+
+    filter:blur(70px);
+
+    z-index:-2;
+
+}
+
+body::after{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    opacity:.18;
+
+    background-image:
+        radial-gradient(#ffffff 1px, transparent 1px);
+
+    background-size:90px 90px;
+
+    z-index:-1;
+
+}
+
+/* ==========================
+   APP
+========================== */
+
+#app{
+
+    width:100%;
+    min-height:100vh;
+
+}
+
+/* ==========================
+   SCREEN
+========================== */
+
+.screen{
+
+    width:100%;
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:24px;
+
+}
+
+/* ==========================
+   CONTAINER
+========================== */
+
+.container{
+
+    width:100%;
+    max-width:430px;
+
+    margin:0 auto;
+
+}
+
+/* ==========================
+   TEXT
+========================== */
+
+h1,h2,h3,h4,h5{
+
+    font-weight:700;
+
+    line-height:1.2;
+
+}
+
+p{
+
+    line-height:1.6;
+
+}
+
+small{
+
+    color:#A9AAC6;
+
+}
+
+/* ==========================
+   LINK
+========================== */
+
+a{
+
+    color:inherit;
+
+    text-decoration:none;
+
+}
+
+/* ==========================
+   IMAGE
+========================== */
+
+img{
+
+    max-width:100%;
+
+    display:block;
+
+}
+
+/* ==========================
+   BUTTON
+========================== */
+
+button{
+
+    font:inherit;
+
+}
+
+/* ==========================
+   SCROLLBAR
+========================== */
+
+::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:rgba(108,77,255,.35);
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:transparent;
+
+}
+
+body::before{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    background:
+
+    radial-gradient(circle,
+    rgba(132,96,255,.12),
+    transparent 60%);
+
+    filter:blur(90px);
+
+    animation:auroraMove 18s ease-in-out infinite;
+
+}
+
+@keyframes auroraMove{
+
+    0%{
+
+        transform:
+        translate(-8%,-5%)
+        scale(1);
+
+    }
+
+    50%{
+
+        transform:
+        translate(10%,8%)
+        scale(1.15);
+
+    }
+
+    100%{
+
+        transform:
+        translate(-8%,-5%)
+        scale(1);
+
+    }
+
+}

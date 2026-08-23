@@ -1,0 +1,1193 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Segoe UI,sans-serif;
+}
+
+body{
+
+background:#09090F;
+
+color:white;
+
+display:flex;
+
+justify-content:center;
+
+padding:30px;
+
+}
+
+#app{
+
+width:420px;
+
+min-height:100vh;
+
+}
+
+.card{
+
+background:#171727;
+
+border-radius:22px;
+
+padding:20px;
+
+box-shadow:0 0 25px rgba(108,77,255,.25);
+
+}
+
+.title{
+
+font-size:34px;
+
+font-weight:bold;
+
+}
+
+.subtitle{
+
+color:#9ca3af;
+
+margin-top:8px;
+
+margin-bottom:25px;
+
+}
+
+.player{
+
+display:flex;
+
+align-items:center;
+
+gap:18px;
+
+margin-bottom:20px;
+
+}
+
+.avatar{
+
+width:80px;
+
+height:80px;
+
+border-radius:50%;
+
+background:#6C4DFF;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+font-size:36px;
+
+}
+
+.name{
+
+font-size:28px;
+
+font-weight:bold;
+
+}
+
+.role{
+
+color:#bdbdbd;
+
+margin-top:5px;
+
+}
+
+.level{
+
+margin-top:12px;
+
+display:inline-block;
+
+background:#6C4DFF;
+
+padding:6px 18px;
+
+border-radius:50px;
+
+font-weight:bold;
+
+}
+
+.exp{
+
+margin-top:25px;
+
+}
+
+.bar{
+
+height:12px;
+
+background:#2f2f45;
+
+border-radius:20px;
+
+overflow:hidden;
+
+margin-top:8px;
+
+}
+
+.fill{
+
+height:100%;
+
+width:80%;
+
+background:#6C4DFF;
+
+border-radius:20px;
+
+}
+
+.stats{
+
+margin-top:25px;
+
+display:grid;
+
+grid-template-columns:repeat(2,1fr);
+
+gap:15px;
+
+}
+
+.stat{
+
+background:#222236;
+
+padding:20px;
+
+border-radius:18px;
+
+text-align:center;
+
+}
+
+.stat h2{
+
+margin-top:10px;
+
+font-size:28px;
+
+}
+
+.footer{
+
+margin-top:25px;
+
+text-align:center;
+
+color:#888;
+
+}
+
+.bottom-nav{
+
+margin-top:25px;
+
+display:flex;
+
+justify-content:space-between;
+
+gap:8px;
+
+}
+
+.bottom-nav button{
+
+flex:1;
+
+background:#232338;
+
+border:none;
+
+border-radius:15px;
+
+padding:12px;
+
+color:white;
+
+cursor:pointer;
+
+transition:.25s;
+
+}
+
+.bottom-nav button:hover{
+
+background:#6C4DFF;
+
+}
+
+.bottom-nav span{
+
+display:block;
+
+margin-top:6px;
+
+font-size:12px;
+
+}
+
+/* ==========================
+   ORACLE SCREEN
+========================== */
+
+.oracle-screen{
+
+    position:fixed;
+
+    inset:0;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:
+    radial-gradient(circle at center,
+    rgba(108,77,255,.18),
+    #09090F 70%);
+
+    animation:fadeIn .6s ease;
+
+}
+
+.oracle-card{
+
+    width:360px;
+
+    max-width:90%;
+
+    text-align:center;
+
+}
+
+.oracle-logo{
+
+    font-size:72px;
+
+    margin-bottom:18px;
+
+    animation:floatCrystal 3s ease-in-out infinite;
+
+    filter:drop-shadow(0 0 25px rgba(108,77,255,.6));
+
+}
+.oracle-player{
+
+    margin-top:12px;
+
+    font-size:18px;
+
+}
+
+.oracle-message{
+
+    margin:20px 0;
+
+    color:var(--text-secondary);
+
+    line-height:1.6;
+
+}
+
+.oracle-stats{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:12px;
+
+    margin-bottom:25px;
+
+}
+
+.oracle-stats div{
+
+    background:rgba(255,255,255,.05);
+
+    padding:12px;
+
+    border-radius:14px;
+
+}
+
+@keyframes pulse{
+
+    0%{
+
+        transform:scale(1);
+
+    }
+
+    50%{
+
+        transform:scale(1.08);
+
+    }
+
+    100%{
+
+        transform:scale(1);
+
+    }
+
+}
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+
+    }
+
+    to{
+
+        opacity:1;
+
+    }
+
+}
+
+@keyframes floatCrystal{
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-8px);
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+}
+
+.dashboard{
+
+    max-width:420px;
+
+    margin:30px auto;
+
+    padding:20px;
+
+}
+
+.player-header{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:16px;
+
+    margin-bottom:20px;
+
+}
+
+.player-avatar{
+
+    width:70px;
+
+    height:70px;
+
+    border-radius:50%;
+
+    background:rgba(108,77,255,.15);
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:32px;
+
+}
+
+.player-level{
+
+    margin:20px 0 10px;
+
+    font-size:22px;
+
+    font-weight:bold;
+
+}
+
+.exp-text{
+
+    margin-top:10px;
+
+    color:#B5B5C3;
+
+    text-align:center;
+
+}
+
+.status-grid{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:16px;
+
+    margin:20px 0;
+
+}
+
+.status-card{
+
+    text-align:center;
+
+}
+
+.status-icon{
+
+    font-size:30px;
+
+    margin-bottom:10px;
+
+}
+
+.status-title{
+
+    color:#B5B5C3;
+
+}
+
+.status-value{
+
+    font-size:24px;
+
+    font-weight:bold;
+
+    margin-top:8px;
+
+}
+
+.quest-card{
+
+    text-align:center;
+
+}
+
+.player-card{
+
+    text-align:center;
+
+    margin-bottom:20px;
+
+}
+
+.player-avatar{
+
+    width:90px;
+
+    height:90px;
+
+    margin:auto;
+
+    border-radius:50%;
+
+    background:rgba(108,77,255,.15);
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:40px;
+
+    margin-bottom:20px;
+
+    transition:.25s;
+
+}
+
+.player-avatar:hover{
+
+    transform:scale(1.08);
+
+}
+
+.player-role{
+
+    color:#B5B5C3;
+
+    margin-top:8px;
+
+}
+
+.player-level{
+
+    margin:18px 0;
+
+    font-weight:bold;
+
+    font-size:22px;
+
+}
+
+.exp-text{
+
+    margin-top:12px;
+
+    color:#B5B5C3;
+
+}
+
+.quest-item{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:15px;
+
+    padding:16px 0;
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+
+}
+
+.quest-item:last-child{
+
+    border-bottom:none;
+
+}
+
+.quest-item small{
+
+    display:block;
+
+    color:#B5B5C3;
+
+    margin-top:6px;
+
+}
+
+.quest-btn{
+
+    width:auto;
+
+    padding:10px 18px;
+
+}
+
+body{
+
+    min-height:100vh;
+
+    overflow:hidden;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    position:relative;
+
+}
+
+body::before{
+
+    content:"";
+
+    position:fixed;
+
+    width:700px;
+
+    height:700px;
+
+    border-radius:50%;
+
+    background:
+
+    radial-gradient(
+
+    rgba(108,77,255,.28),
+
+    transparent 70%
+
+    );
+
+    filter:blur(70px);
+
+    animation:
+
+    pulse 6s ease-in-out infinite;
+
+}
+
+@keyframes pulse{
+
+    0%{
+
+        transform:scale(.9);
+
+        opacity:.6;
+
+    }
+
+    50%{
+
+        transform:scale(1.15);
+
+        opacity:1;
+
+    }
+
+    100%{
+
+        transform:scale(.9);
+
+        opacity:.6;
+
+    }
+
+}
+
+.oracle-screen{
+
+    width:430px;
+
+    padding:40px;
+
+    border-radius:28px;
+
+    text-align:center;
+
+    position:relative;
+
+}
+
+.oracle-logo{
+
+    width:90px;
+
+    margin:auto;
+
+    margin-bottom:22px;
+
+    animation:
+
+    floatCrystal
+
+    3s ease-in-out infinite;
+
+}
+
+@keyframes floatCrystal{
+
+    0%{
+
+        transform:translateY(0px);
+
+    }
+
+    50%{
+
+        transform:translateY(-10px);
+
+    }
+
+    100%{
+
+        transform:translateY(0px);
+
+    }
+
+}
+
+.oracle-title{
+
+    font-size:44px;
+
+    font-weight:900;
+
+    letter-spacing:6px;
+
+}
+
+.oracle-sub{
+
+    color:var(--text2);
+
+    margin-top:10px;
+
+    margin-bottom:28px;
+
+}
+
+.oracle-message{
+
+    color:var(--text2);
+
+    line-height:1.7;
+
+    margin-bottom:26px;
+
+}
+
+.oracle-status{
+
+    display:grid;
+
+    grid-template-columns:
+
+    repeat(3,1fr);
+
+    gap:14px;
+
+    margin:30px 0;
+
+}
+
+.oracle-status .ui-card{
+
+    padding:20px 12px;
+
+}
+
+.oracle-status h3{
+
+    font-size:24px;
+
+    margin-top:10px;
+
+}
+
+.footer-text{
+
+    color:#8E90B2;
+
+    margin-top:25px;
+
+    font-size:14px;
+
+    letter-spacing:2px;
+
+}
+
+.oracle-stats{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:16px;
+
+    margin:28px 0;
+
+}
+
+.oracle-stats .ui-card{
+
+    text-align:center;
+
+    padding:18px 10px;
+
+    transition:.3s;
+
+}
+
+.oracle-stats .ui-card:hover{
+
+    transform:translateY(-6px);
+
+}
+
+.oracle-stats span{
+
+    font-size:22px;
+
+    display:block;
+
+    margin-bottom:10px;
+
+}
+
+.oracle-stats strong{
+
+    display:block;
+
+    font-size:22px;
+
+    margin-bottom:6px;
+
+}
+
+.oracle-stats small{
+
+    color:#A9AAC6;
+
+    letter-spacing:2px;
+
+}
+
+body::after{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    background-image:
+
+        radial-gradient(circle at 20% 20%, rgba(255,255,255,.05) 1px, transparent 1px),
+
+        radial-gradient(circle at 80% 70%, rgba(255,255,255,.04) 1px, transparent 1px),
+
+        radial-gradient(circle at 60% 40%, rgba(255,255,255,.03) 1px, transparent 1px);
+
+    background-size:
+
+        180px 180px,
+
+        240px 240px,
+
+        320px 320px;
+
+    opacity:.5;
+
+}
+
+/* ===========================
+   ORACLE CARD GLOW
+=========================== */
+
+.oracle-card{
+
+    position:relative;
+
+    overflow:hidden;
+
+    animation:fadeUp .7s ease;
+
+}
+
+.oracle-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:260px;
+
+    height:260px;
+
+    border-radius:50%;
+
+    background:rgba(108,77,255,.12);
+
+    filter:blur(70px);
+
+    left:-80px;
+
+    top:-80px;
+
+    z-index:0;
+
+}
+
+.oracle-card>*{
+
+    position:relative;
+
+    z-index:1;
+
+}
+
+/* ===========================
+   FADE ANIMATION
+=========================== */
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(25px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/*=====================================
+PLAYER CARD PREMIUM
+=====================================*/
+
+.player-card{
+
+    padding:32px;
+
+    text-align:center;
+
+}
+
+.player-avatar{
+
+    width:120px;
+
+    height:120px;
+
+    margin:auto;
+
+    position:relative;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+.avatar-ring{
+
+    position:absolute;
+
+    width:120px;
+
+    height:120px;
+
+    border-radius:50%;
+
+    border:2px solid rgba(108,77,255,.25);
+
+    animation:ringRotate 18s linear infinite;
+
+}
+
+.avatar-crystal{
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+.player-name{
+
+    margin-top:18px;
+
+    font-size:30px;
+
+    font-weight:700;
+
+    letter-spacing:1px;
+
+}
+
+.player-role{
+
+    color:#A9AAC6;
+
+    margin-top:8px;
+
+}
+
+.player-level{
+
+    margin-top:16px;
+
+    font-weight:700;
+
+    color:#8D73FF;
+
+}
+
+.exp-text{
+
+    margin-top:14px;
+
+    color:#A9AAC6;
+
+}
+
+/*=====================================
+PROGRESS BAR PREMIUM
+=====================================*/
+
+.progress{
+
+    width:100%;
+
+    height:14px;
+
+    margin-top:18px;
+
+    background:rgba(255,255,255,.08);
+
+    border-radius:999px;
+
+    overflow:hidden;
+
+    position:relative;
+
+}
+
+.progress-fill{
+
+    height:100%;
+
+    border-radius:999px;
+
+    background:linear-gradient(
+        90deg,
+        #6C4DFF,
+        #8D73FF
+    );
+
+    position:relative;
+
+    transition:width .6s ease;
+
+}
+
+.progress-fill::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.35),
+        transparent
+    );
+
+    animation:progressShine 2.5s linear infinite;
+
+}
+
+@keyframes progressShine{
+
+    from{
+
+        transform:translateX(-100%);
+
+    }
+
+    to{
+
+        transform:translateX(250%);
+
+    }
+
+}
+
+/*=====================================
+STATUS CARD PREMIUM
+=====================================*/
+
+.status-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:18px;
+
+    margin-top:24px;
+
+}
+
+.status-card{
+
+    padding:22px;
+
+    text-align:center;
+
+    transition:.3s;
+
+    cursor:default;
+
+}
+
+.status-card:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:0 10px 30px rgba(108,77,255,.25);
+
+}
+
+.status-icon{
+
+    font-size:34px;
+
+    margin-bottom:12px;
+
+}
+
+.status-title{
+
+    font-size:13px;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+
+    color:#A9AAC6;
+
+    margin-bottom:8px;
+
+}
+
+.status-value{
+
+    font-size:28px;
+
+    font-weight:700;
+
+    color:#FFFFFF;
+
+}

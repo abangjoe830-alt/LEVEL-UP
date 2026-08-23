@@ -1,0 +1,9 @@
+{
+  "name": "LEVEL-UP",
+  "short_name": "LEVEL-UP",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#09090F",
+  "theme_color": "#6C4DFF",
+  "icons": []
+}

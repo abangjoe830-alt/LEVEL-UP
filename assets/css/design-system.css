@@ -1,0 +1,145 @@
+:root{
+
+    --bg:#090A12;
+
+    --surface:rgba(22,24,38,.72);
+
+    --surface2:rgba(255,255,255,.04);
+
+    --primary:#6C4DFF;
+
+    --primary2:#8D73FF;
+
+    --text:#FFFFFF;
+
+    --text2:#A9AAC6;
+
+    --border:rgba(255,255,255,.08);
+
+    --shadow:0 20px 60px rgba(0,0,0,.45);
+
+}
+
+*{
+
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
+}
+
+body{
+
+    background:var(--bg);
+
+    color:var(--text);
+
+    font-family:
+    Inter,
+    Segoe UI,
+    sans-serif;
+
+}
+
+.ui-card{
+
+    background:var(--surface);
+
+    backdrop-filter:blur(24px);
+
+    border:1px solid var(--border);
+
+    border-radius:22px;
+
+    box-shadow:var(--shadow);
+
+    transition:.25s;
+
+}
+
+.ui-card:hover{
+
+    transform:translateY(-4px);
+
+    border-color:rgba(108,77,255,.35);
+
+    box-shadow:
+    0 0 40px rgba(108,77,255,.22);
+
+}
+
+.btn-primary{
+
+    width:auto;
+
+    min-width:120px;
+
+    height:44px;
+
+    padding:0 18px;
+
+    border:none;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    color:white;
+
+    font-size:14px;
+
+    font-weight:700;
+
+    background:
+    linear-gradient(
+    135deg,
+    var(--primary),
+    var(--primary2)
+    );
+
+    transition:.25s;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.btn-primary::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:-120%;
+
+    top:0;
+
+    width:60%;
+
+    height:100%;
+
+    background:rgba(255,255,255,.25);
+
+    transform:skewX(-25deg);
+
+    transition:.7s;
+
+}
+
+.btn-primary:hover::before{
+
+    left:160%;
+
+}
+
+.btn-primary:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:
+    0 0 35px rgba(108,77,255,.45);
+
+}

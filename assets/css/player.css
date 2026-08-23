@@ -1,0 +1,424 @@
+/*==================================================
+PLAYER CARD
+==================================================*/
+
+.player-card{
+
+    width:100%;
+
+    padding:24px;
+
+    border-radius:30px;
+
+    text-align:center;
+
+    margin-bottom:24px;
+
+}
+
+/* ==========================
+   AVATAR
+========================== */
+
+.player-avatar{
+
+    width:100px;
+
+    height:100px;
+
+    margin:0 auto 16px;
+
+    position:relative;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    cursor:pointer;
+
+transition:transform .25s ease;
+
+}
+
+.avatar-ring{
+
+    position:absolute;
+
+    width:94px;
+
+    height:94px;
+
+    border-radius:50%;
+
+    border:2px solid rgba(108,77,255,.45);
+
+    box-shadow:
+        0 0 10px rgba(108,77,255,.25),
+        0 0 20px rgba(108,77,255,.18),
+        inset 0 0 12px rgba(255,255,255,.05);
+
+    animation:avatarPulse 4s ease-in-out infinite;
+
+}
+
+.avatar-ring-2{
+
+    width:110px;
+
+    height:110px;
+
+    opacity:.28;
+
+    animation:avatarPulse 5s ease-in-out infinite;
+
+}
+
+.avatar-ring-3{
+
+    width:126px;
+
+    height:126px;
+
+    opacity:.15;
+
+    animation:avatarPulse 6s ease-in-out infinite;
+
+}
+
+.avatar-crystal{
+
+    position:relative;
+
+    width:48px;
+
+    height:68px;
+
+    z-index:2;
+
+    filter:
+        drop-shadow(0 0 10px rgba(145,120,255,.55))
+        drop-shadow(0 0 22px rgba(108,77,255,.35));
+
+    animation:crystalFloat 3s ease-in-out infinite;
+
+}
+
+/* Crystal */
+
+.avatar-crystal .crystal-top{
+
+    width:0;
+
+    height:0;
+
+    border-left:28px solid transparent;
+
+    border-right:28px solid transparent;
+
+    border-bottom:22px solid #EEE8FF;
+
+}
+
+.avatar-crystal .crystal-middle{
+
+    position:relative;
+
+    width:56px;
+
+    height:34px;
+
+    overflow:hidden;
+
+    background:
+    linear-gradient(
+        180deg,
+        #F5F2FF 0%,
+        #C8B7FF 30%,
+        #8B6FFF 70%,
+        #5B34FF 100%
+    );
+
+}
+
+.avatar-crystal .crystal-middle::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:4px;
+
+    left:8px;
+
+    width:10px;
+
+    height:22px;
+
+    border-radius:10px;
+
+    background:rgba(255,255,255,.55);
+
+    transform:rotate(12deg);
+
+    filter:blur(.5px);
+
+}
+
+.avatar-crystal .crystal-middle::after{
+
+    content:"";
+
+    position:absolute;
+
+    right:6px;
+
+    top:8px;
+
+    width:6px;
+
+    height:12px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.25);
+
+}
+
+.avatar-crystal .crystal-bottom{
+
+    width:0;
+
+    height:0;
+
+    border-left:28px solid transparent;
+
+    border-right:28px solid transparent;
+
+    border-top:30px solid #5A36FF;
+
+}
+
+/* ==========================
+   TEXT
+========================== */
+
+.player-name{
+
+    font-size:24px;
+
+    font-weight:700;
+
+    margin-bottom:6px;
+
+}
+
+.player-role{
+
+    color:#A9AAC6;
+
+    letter-spacing:2px;
+
+    font-size:13px;
+
+    text-transform:uppercase;
+
+}
+
+.player-level{
+
+    margin-top:14px;
+
+    font-size:15px;
+
+    color:#D3D5E5;
+
+}
+
+/* ==========================
+   EXP
+========================== */
+
+.progress{
+
+    margin-top:16px;
+
+    width:100%;
+
+    height:12px;
+
+    overflow:hidden;
+
+    border-radius:20px;
+
+    background:rgba(255,255,255,.08);
+
+    border:1px solid rgba(255,255,255,.05);
+
+}
+
+.progress-fill{
+
+    height:100%;
+
+    border-radius:20px;
+
+    background:
+
+    linear-gradient(
+        90deg,
+        #6C4DFF,
+        #8D73FF,
+        #B89DFF
+    );
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.progress-fill::after{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:-35%;
+
+    width:30%;
+
+    height:100%;
+
+    background:
+
+    rgba(255,255,255,.35);
+
+    transform:skewX(-25deg);
+
+}
+
+.exp-text{
+
+    margin-top:10px;
+
+    font-size:13px;
+
+    color:#A9AAC6;
+
+}
+
+@keyframes avatarPulse{
+
+    0%{
+
+        transform:scale(1);
+
+    }
+
+    50%{
+
+        transform:scale(1.04);
+
+    }
+
+    100%{
+
+        transform:scale(1);
+
+    }
+
+}
+
+@keyframes crystalFloat{
+
+    0%{
+
+        transform:translateY(0px);
+
+    }
+
+    50%{
+
+        transform:translateY(-4px);
+
+    }
+
+    100%{
+
+        transform:translateY(0px);
+
+    }
+
+}
+
+.player-avatar:hover{
+
+    transform:scale(1.05);
+
+}
+
+.player-resource{
+
+display:flex;
+
+justify-content:space-around;
+
+margin-top:18px;
+
+padding-top:16px;
+
+border-top:1px solid rgba(255,255,255,.08);
+
+}
+
+.player-resource div{
+
+font-size:14px;
+
+font-weight:600;
+
+color:#ECECFF;
+
+}
+
+.hunter-rank{
+
+margin-top:10px;
+
+display:inline-block;
+
+padding:8px 18px;
+
+border-radius:20px;
+
+background:rgba(255,255,255,.08);
+
+border:1px solid rgba(255,255,255,.12);
+
+font-weight:bold;
+
+color:#FFD54F;
+
+font-size:14px;
+
+letter-spacing:1px;
+
+}
+
+.hunter-title{
+
+margin-top:6px;
+
+font-size:15px;
+
+font-weight:bold;
+
+color:#B388FF;
+
+letter-spacing:.5px;
+
+}

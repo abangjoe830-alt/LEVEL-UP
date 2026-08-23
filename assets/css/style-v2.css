@@ -1,0 +1,1007 @@
+/*==================================================
+LEVEL-UP V2
+Created by Muzammil & ChatGPT
+==================================================*/
+
+
+/*==================================================
+RESET
+==================================================*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,
+body{
+
+    width:100%;
+    min-height:100%;
+
+}
+
+body{
+
+    background:#090A12;
+
+    color:#FFFFFF;
+
+    font-family:
+    Inter,
+    "Segoe UI",
+    sans-serif;
+
+    overflow-x:hidden;
+
+}
+
+
+/*==================================================
+APP
+==================================================*/
+
+#app{
+
+    width:100%;
+
+    min-height:100vh;
+
+}
+
+
+/*==================================================
+LAYOUT
+==================================================*/
+
+.screen{
+
+    width:100%;
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:30px;
+
+}
+
+
+/*==================================================
+BACKGROUND
+==================================================*/
+
+body::before{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    background:
+
+    radial-gradient(
+        circle at 50% 20%,
+        rgba(108,77,255,.22),
+        transparent 55%
+    );
+
+    filter:blur(60px);
+
+}
+
+body::after{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    background-image:
+
+    radial-gradient(
+        rgba(255,255,255,.05) 1px,
+        transparent 1px
+    );
+
+    background-size:140px 140px;
+
+    opacity:.35;
+
+}
+
+
+/*==================================================
+ANIMATION
+==================================================*/
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:
+        translateY(30px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+        translateY(0);
+
+    }
+
+}
+
+
+@keyframes float{
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-8px);
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+@keyframes rotate{
+
+    from{
+
+        transform:rotate(0deg);
+
+    }
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+
+/*==================================================
+ORACLE REBORN
+==================================================*/
+
+.oracle-screen{
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:30px;
+
+}
+
+.oracle-card{
+
+    width:100%;
+
+    max-width:430px;
+
+    background:rgba(22,24,38,.78);
+
+    backdrop-filter:blur(24px);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:32px;
+
+    padding:40px 30px;
+
+    text-align:center;
+
+    position:relative;
+
+    overflow:hidden;
+
+    animation:fadeUp .6s ease;
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,.45),
+        0 0 40px rgba(108,77,255,.15);
+
+}
+
+/* Glow belakang card */
+
+.oracle-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:260px;
+
+    height:260px;
+
+    border-radius:50%;
+
+    background:rgba(108,77,255,.18);
+
+    filter:blur(70px);
+
+    left:-80px;
+
+    top:-80px;
+
+}
+
+.oracle-card>*{
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+/* ==========================
+   LOGO
+========================== */
+
+.oracle-logo{
+
+    width:130px;
+
+    height:130px;
+
+    margin:0 auto 30px;
+
+    position:relative;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    animation:float 3s ease-in-out infinite;
+
+}
+
+/* Ring */
+
+.energy-ring{
+
+    position:absolute;
+
+    width:120px;
+
+    height:120px;
+
+    border-radius:50%;
+
+    border:2px solid rgba(108,77,255,.35);
+
+    animation:rotate 18s linear infinite;
+
+}
+
+.energy-ring::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:12px;
+
+    border-radius:50%;
+
+    border:1px solid rgba(255,255,255,.12);
+
+}
+
+/* Crystal */
+
+.crystal{
+
+    position:relative;
+
+    width:56px;
+
+    height:78px;
+
+}
+
+.crystal-top{
+
+    width:0;
+
+    height:0;
+
+    border-left:28px solid transparent;
+
+    border-right:28px solid transparent;
+
+    border-bottom:22px solid #B89DFF;
+
+}
+
+.crystal-middle{
+
+    width:56px;
+
+    height:34px;
+
+    background:linear-gradient(#D8CCFF,#7B5CFF);
+
+}
+
+.crystal-bottom{
+
+    width:0;
+
+    height:0;
+
+    border-left:28px solid transparent;
+
+    border-right:28px solid transparent;
+
+    border-top:30px solid #6846FF;
+
+}
+
+/* ==========================
+   TEXT
+========================== */
+
+.oracle-title{
+
+    font-size:42px;
+
+    font-weight:900;
+
+    letter-spacing:6px;
+
+}
+
+.oracle-sub{
+
+    margin-top:8px;
+
+    color:#9EA3BF;
+
+    letter-spacing:3px;
+
+    font-size:13px;
+
+}
+
+.oracle-player{
+
+    margin-top:28px;
+
+    font-size:22px;
+
+    font-weight:700;
+
+}
+
+.oracle-message{
+
+    margin:22px 0 30px;
+
+    color:#B8BCD3;
+
+    line-height:1.7;
+
+    font-size:15px;
+
+}
+
+/*==================================================
+ORACLE STATUS
+==================================================*/
+
+.oracle-stats{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:16px;
+
+    margin:32px 0;
+
+}
+
+.oracle-stats .ui-card{
+
+    padding:18px 10px;
+
+    text-align:center;
+
+    border-radius:20px;
+
+    background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    transition:.25s;
+
+}
+
+.oracle-stats .ui-card:hover{
+
+    transform:translateY(-6px);
+
+    border-color:rgba(108,77,255,.35);
+
+    box-shadow:0 0 25px rgba(108,77,255,.25);
+
+}
+
+.oracle-stats span{
+
+    display:block;
+
+    font-size:24px;
+
+    margin-bottom:10px;
+
+}
+
+.oracle-stats strong{
+
+    display:block;
+
+    font-size:22px;
+
+    margin-bottom:6px;
+
+    color:#FFFFFF;
+
+}
+
+.oracle-stats small{
+
+    display:block;
+
+    color:#9EA3BF;
+
+    font-size:11px;
+
+    letter-spacing:2px;
+
+}
+
+
+/*==================================================
+BUTTON
+==================================================*/
+
+.btn-primary{
+
+    width:100%;
+
+    height:58px;
+
+    margin-top:10px;
+
+    border:none;
+
+    border-radius:18px;
+
+    cursor:pointer;
+
+    color:#FFFFFF;
+
+    font-size:16px;
+
+    font-weight:700;
+
+    background:linear-gradient(
+        135deg,
+        #6C4DFF,
+        #8D73FF
+    );
+
+    transition:.3s;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.btn-primary::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:-120%;
+
+    top:0;
+
+    width:60%;
+
+    height:100%;
+
+    background:rgba(255,255,255,.25);
+
+    transform:skewX(-25deg);
+
+    transition:.8s;
+
+}
+
+.btn-primary:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 0 30px rgba(108,77,255,.35);
+
+}
+
+.btn-primary:hover::before{
+
+    left:160%;
+
+}
+
+
+/*==================================================
+FOOTER
+==================================================*/
+
+.oracle-footer{
+
+    margin-top:24px;
+
+    color:#8D90AE;
+
+    font-size:13px;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+
+}
+
+.energy-ring-2{
+
+    width:145px;
+
+    height:145px;
+
+    opacity:.35;
+
+    animation:rotate 28s linear infinite reverse;
+
+}
+
+/*==================================================
+PART 4 - PREMIUM EFFECT
+==================================================*/
+
+/* Crystal Glow */
+
+.crystal{
+
+    filter:
+        drop-shadow(0 0 10px rgba(160,130,255,.8))
+        drop-shadow(0 0 25px rgba(108,77,255,.6));
+
+    animation:float 3.5s ease-in-out infinite;
+
+}
+
+/* Crystal berkilau */
+
+.crystal::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+
+    top:50%;
+
+    width:10px;
+
+    height:10px;
+
+    transform:translate(-50%,-50%);
+
+    border-radius:50%;
+
+    background:#FFFFFF;
+
+    opacity:.9;
+
+    box-shadow:
+        0 0 12px #FFFFFF,
+        0 0 30px #B89DFF,
+        0 0 45px #6C4DFF;
+
+}
+
+
+/* Ring lebih halus */
+
+.energy-ring{
+
+    box-shadow:
+        0 0 18px rgba(108,77,255,.25);
+
+}
+
+
+/* Card glow saat hover */
+
+.oracle-card:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:
+        0 25px 80px rgba(0,0,0,.45),
+        0 0 55px rgba(108,77,255,.30);
+
+}
+
+
+/* Oracle Title */
+
+.oracle-title{
+
+    text-shadow:
+        0 0 12px rgba(108,77,255,.35);
+
+}
+
+
+/* Player */
+
+.oracle-player{
+
+    color:#FFFFFF;
+
+    text-shadow:
+        0 0 10px rgba(108,77,255,.25);
+
+}
+
+
+/* Message */
+
+.oracle-message{
+
+    max-width:310px;
+
+    margin-left:auto;
+
+    margin-right:auto;
+
+}
+
+
+/* Fade satu per satu */
+
+.oracle-logo{
+
+    animation:
+        fadeUp .5s ease,
+        float 3.5s ease-in-out infinite;
+
+}
+
+.oracle-title{
+
+    animation:fadeUp .7s ease;
+
+}
+
+.oracle-sub{
+
+    animation:fadeUp .9s ease;
+
+}
+
+.oracle-player{
+
+    animation:fadeUp 1.1s ease;
+
+}
+
+.oracle-message{
+
+    animation:fadeUp 1.3s ease;
+
+}
+
+.oracle-stats{
+
+    animation:fadeUp 1.5s ease;
+
+}
+
+.btn-primary{
+
+    animation:fadeUp 1.7s ease;
+
+}
+
+.oracle-footer{
+
+    animation:fadeUp 1.9s ease;
+
+}
+
+/*==================================================
+PART 5 - DASHBOARD
+==================================================*/
+
+/* DASHBOARD */
+
+.dashboard{
+
+    width:100%;
+    max-width:430px;
+    margin:auto;
+    padding:30px 20px 100px;
+
+}
+
+
+/* PLAYER CARD */
+
+.player-card{
+
+    background:rgba(22,24,38,.78);
+
+    backdrop-filter:blur(24px);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:30px;
+
+    padding:30px;
+
+    text-align:center;
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,.35);
+
+    animation:fadeUp .5s ease;
+
+}
+
+.player-avatar{
+
+    width:110px;
+    height:110px;
+
+    margin:auto;
+
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:
+    radial-gradient(circle,#8D73FF,#5B39F4);
+
+    box-shadow:
+    0 0 35px rgba(108,77,255,.45);
+
+    font-size:42px;
+
+}
+
+.player-name{
+
+    margin-top:18px;
+
+    font-size:26px;
+
+    font-weight:700;
+
+}
+
+.player-role{
+
+    color:#9EA3BF;
+
+    margin-top:5px;
+
+    letter-spacing:2px;
+
+    font-size:13px;
+
+}
+
+.player-level{
+
+    margin-top:20px;
+
+    font-size:15px;
+
+    color:#CFCFFF;
+
+}
+
+
+/* EXP */
+
+.progress{
+
+    margin-top:18px;
+
+    height:14px;
+
+    background:rgba(255,255,255,.08);
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+}
+
+.progress-fill{
+
+    height:100%;
+
+    border-radius:20px;
+
+    background:
+    linear-gradient(
+        90deg,
+        #6C4DFF,
+        #B89DFF
+    );
+
+    position:relative;
+
+}
+
+.progress-fill::after{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:-30%;
+
+    width:30%;
+    height:100%;
+
+    background:rgba(255,255,255,.35);
+
+    transform:skewX(-25deg);
+
+    animation:shine 2.5s linear infinite;
+
+}
+
+.exp-text{
+
+    margin-top:12px;
+
+    color:#AEB4D0;
+
+    font-size:13px;
+
+}
+
+
+/* STATUS */
+
+.status-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:18px;
+
+    margin-top:28px;
+
+}
+
+.status-card{
+
+    background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:22px;
+
+    padding:20px;
+
+    text-align:center;
+
+    transition:.25s;
+
+}
+
+.status-card:hover{
+
+    transform:translateY(-5px);
+
+    border-color:#6C4DFF;
+
+}
+
+.status-icon{
+
+    font-size:28px;
+
+}
+
+.status-title{
+
+    margin-top:10px;
+
+    color:#9EA3BF;
+
+    font-size:12px;
+
+    letter-spacing:2px;
+
+}
+
+.status-value{
+
+    margin-top:8px;
+
+    font-size:24px;
+
+    font-weight:700;
+
+}
+
+
+/* SHINE */
+
+@keyframes shine{
+
+    from{
+
+        left:-30%;
+
+    }
+
+    to{
+
+        left:130%;
+
+    }
+
+}

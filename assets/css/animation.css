@@ -1,0 +1,205 @@
+/*==================================================
+LEVEL-UP V3
+ANIMATION
+==================================================*/
+
+/* Fade */
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:
+            translateY(30px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+/* Crystal Floating */
+
+@keyframes float{
+
+    0%{
+
+        transform:
+            translateY(0);
+
+    }
+
+    50%{
+
+        transform:
+            translateY(-8px);
+
+    }
+
+    100%{
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+/* Ring Rotate */
+
+@keyframes rotate{
+
+    from{
+
+        transform:
+            rotate(0deg);
+
+    }
+
+    to{
+
+        transform:
+            rotate(360deg);
+
+    }
+
+}
+
+/* Glow Pulse */
+
+@keyframes pulseGlow{
+
+    0%{
+
+        filter:
+            drop-shadow(0 0 8px rgba(108,77,255,.30));
+
+    }
+
+    50%{
+
+        filter:
+            drop-shadow(0 0 25px rgba(108,77,255,.70));
+
+    }
+
+    100%{
+
+        filter:
+            drop-shadow(0 0 8px rgba(108,77,255,.30));
+
+    }
+
+}
+
+/* Shine */
+
+@keyframes shine{
+
+    from{
+
+        left:-35%;
+
+    }
+
+    to{
+
+        left:135%;
+
+    }
+
+}
+
+/* ==========================
+   AUTO ANIMATION
+========================== */
+
+.oracle-card{
+
+    animation:
+        fadeUp .55s ease;
+
+}
+
+.oracle-logo{
+
+    animation:
+        float 3.2s ease-in-out infinite;
+
+}
+
+.energy-ring{
+
+    animation:
+        rotate 16s linear infinite;
+
+}
+
+.energy-ring-2{
+
+    animation:
+        rotate 26s linear infinite reverse;
+
+}
+
+.crystal{
+
+    animation:
+
+        float 3.2s ease-in-out infinite,
+
+        pulseGlow 2.8s ease-in-out infinite;
+
+}
+
+.player-card{
+
+    animation:
+        fadeUp .45s ease;
+
+}
+
+.status-card{
+
+    animation:
+        fadeUp .55s ease;
+
+}
+
+.quest-card{
+
+    animation:
+        fadeUp .7s ease;
+
+}
+
+.progress-fill::after{
+
+    animation:
+        shine 2.5s linear infinite;
+
+}
+
+.btn-primary{
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease;
+
+}
+
+.btn-primary:hover{
+
+    transform:
+        translateY(-3px);
+
+}

@@ -1,0 +1,256 @@
+/*==================================================
+ORACLE SCREEN
+==================================================*/
+
+.oracle-screen{
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:24px;
+
+}
+
+.oracle-card{
+
+    width:100%;
+    max-width:430px;
+
+    padding:40px 28px;
+
+    text-align:center;
+
+    position:relative;
+
+    overflow:hidden;
+
+    background:rgba(22,24,38,.78);
+
+    backdrop-filter:blur(24px);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:30px;
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,.45),
+        0 0 30px rgba(108,77,255,.15);
+
+}
+
+/* ==========================
+   LOGO
+========================== */
+
+.oracle-logo{
+
+    width:150px;
+    height:150px;
+
+    margin:0 auto 30px;
+
+    position:relative;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+/* Ring */
+
+.energy-ring{
+
+    position:absolute;
+
+    width:120px;
+    height:120px;
+
+    border-radius:50%;
+
+    border:2px solid rgba(108,77,255,.35);
+
+}
+
+.energy-ring-2{
+
+    width:145px;
+    height:145px;
+
+    opacity:.35;
+
+}
+
+/* Crystal */
+
+.crystal{
+
+    position:relative;
+
+    width:56px;
+    height:80px;
+
+    filter:
+        drop-shadow(0 0 10px rgba(160,130,255,.8))
+        drop-shadow(0 0 25px rgba(108,77,255,.5));
+
+}
+
+.crystal-top{
+
+    width:0;
+    height:0;
+
+    border-left:28px solid transparent;
+    border-right:28px solid transparent;
+    border-bottom:22px solid #CDBDFF;
+
+}
+
+.crystal-middle{
+
+    width:56px;
+    height:34px;
+
+    background:linear-gradient(
+        #D8CCFF,
+        #7A59FF
+    );
+
+}
+
+.crystal-bottom{
+
+    width:0;
+    height:0;
+
+    border-left:28px solid transparent;
+    border-right:28px solid transparent;
+    border-top:30px solid #6846FF;
+
+}
+
+/* ==========================
+   TEXT
+========================== */
+
+.oracle-title{
+
+    font-size:40px;
+
+    font-weight:900;
+
+    letter-spacing:6px;
+
+}
+
+.oracle-sub{
+
+    margin-top:8px;
+
+    font-size:13px;
+
+    letter-spacing:3px;
+
+    color:#9EA3BF;
+
+}
+
+.oracle-player{
+
+    margin-top:26px;
+
+    font-size:22px;
+
+    font-weight:700;
+
+}
+
+.oracle-message{
+
+    margin:24px auto;
+
+    max-width:320px;
+
+    color:#B7BCD5;
+
+    line-height:1.7;
+
+}
+
+/* ==========================
+   STATUS
+========================== */
+
+.oracle-stats{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:14px;
+
+    margin:30px 0;
+
+}
+
+.oracle-stats .ui-card{
+
+    padding:18px 10px;
+
+    text-align:center;
+
+    border-radius:20px;
+
+}
+
+.oracle-stats span{
+
+    display:block;
+
+    font-size:24px;
+
+    margin-bottom:8px;
+
+}
+
+.oracle-stats strong{
+
+    display:block;
+
+    font-size:20px;
+
+}
+
+.oracle-stats small{
+
+    display:block;
+
+    margin-top:6px;
+
+    letter-spacing:2px;
+
+}
+
+/* ==========================
+   FOOTER
+========================== */
+
+.oracle-footer{
+
+    margin-top:22px;
+
+    font-size:12px;
+
+    letter-spacing:3px;
+
+    color:#8E92B2;
+
+}
